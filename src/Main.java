@@ -1,25 +1,20 @@
+import java.io.IOException;
 import java.util.Scanner;
+import java.io.File;
 
 public class Main {
-    public static void main(String[] args) {
-         Scanner userInput = new Scanner(System.in);
-        System.out.println("Enter current weather: ");
+    public static void main(String[] args) throws IOException {
+        File myFile = new File("ballon.txt");
 
-        String currentWeather = userInput.nextLine();
-
-        switch(currentWeather) {
-            case "Stormy":
-                System.out.println("Quickly seek a shelter");
-                break;
-            case "Cold":
-                System.out.println("Get a sweater with a cardigan now!");
-                break;
-            case "heat":
-                System.out.println("Put off all your clothings");
-                break;
-            default:
-                System.out.println("User not current from planet Earth!");
-                break;
+        try {
+            if(myFile.createNewFile()) {
+                System.out.println("File created successfully " + myFile.getName());
+            }else  {
+                System.out.println("File already exists");
+            }
+        } catch (IOException e) {
+            System.out.println("An Error occurred");
+            e.printStackTrace();
         }
     }
 }
