@@ -2,11 +2,24 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-         int numberOfPlayers = 22;
-         boolean eligibleToPlay = false;
+         Scanner userInput = new Scanner(System.in);
+        System.out.println("Enter current weather: ");
 
-         float averageNumberOfPlayers = (float) numberOfPlayers / 11;
+        String currentWeather = userInput.nextLine();
 
-        System.out.println(averageNumberOfPlayers);
+        switch(currentWeather) {
+            case "Stormy":
+                System.out.println("Quickly seek a shelter");
+                break;
+            case "Cold":
+                System.out.println("Get a sweater with a cardigan now!");
+                break;
+            case "heat":
+                System.out.println("Put off all your clothings");
+                break;
+            default:
+                System.out.println("User not current from planet Earth!");
+                break;
+        }
     }
 }
