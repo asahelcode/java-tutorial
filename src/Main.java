@@ -2,10 +2,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-         Scanner myObj = new Scanner(System.in);
-         System.out.println("Enter username: ");
+         int numberOfPlayers = 22;
+         boolean eligibleToPlay = false;
 
-         String username = myObj.nextLine();
-        System.out.println("Username is: " + username);
+         float averageNumberOfPlayers = (float) numberOfPlayers / 11;
+
+        System.out.println(averageNumberOfPlayers);
     }
 }
